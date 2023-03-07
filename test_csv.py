@@ -11,3 +11,8 @@ my_dict = [
 ]
 
 file = 'records2.csv'
+
+with open(file, 'w', newline='') as csv_fh:
+    csvwriter = csv.DictWriter(csv_fh, fieldnames=fields, delimiter=';')
+    csvwriter.writeheader()
+    csvwriter.writerows(my_dict)
